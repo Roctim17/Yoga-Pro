@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className='header'>
             <div className="logo">
-                <img src="/image/logo/yoga.png" alt="" />
+                <img src="image/logo/yoga.png" alt="" />
                 <h3>Yoga Pro</h3>
             </div>
             <div className="menu">
