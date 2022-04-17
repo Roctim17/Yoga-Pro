@@ -12,10 +12,10 @@ const Footer = () => {
                 <p>Copyright &copy; 2021 yoga pro</p>
             </div>
             <div className="social">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-github"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-linkedin"></i>
+                <i className="fab fa-facebook"></i>
+                <i className="fab fa-github"></i>
+                <i className="fab fa-twitter"></i>
+                <i className="fab fa-linkedin"></i>
             </div>
 
         </div>

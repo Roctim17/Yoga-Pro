@@ -1,0 +1,87 @@
+import React, { useState } from 'react';
+import { Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+
+const SignUp = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
+
+    const handleNameBlur = (e) => {
+        setName(e.target.value);
+    }
+    const handleEmailBlur = (e) => {
+        setEmail(e.target.value);
+    }
+    const handlePasswordBlur = (e) => {
+        setPassword(e.target.value);
+    }
+    const handleConfirmPasswordBlur = (e) => {
+        setConfirmPassword(e.target.value);
+    }
+    const handleCreateUser = (e) => {
+        e.preventDefault();
+        if (password !== confirmPassword) {
+            setError('Confirm Password did not match')
+            return;
+        }
+    }
+
+
+
+    return (
+        <div>
+            <h1>Sign Up</h1>
+            <div className=" row">
+                <div className="col-md-6">
+                </div>
+                <div className="col-md-6 form p-5">
+                    <Form onSubmit={handleCreateUser} className='w-50 m-auto'>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Your Name</Form.Label>
+                            <Form.Control onBlur={handleNameBlur} type="name" placeholder="Enter Your Name" />
+                            <Form.Text className="text-muted">
+
+                            </Form.Text>
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control onBlur={handleEmailBlur} type="email" placeholder="Enter email" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control onBlur={handlePasswordBlur} type="password" placeholder="Password" />
+                        </Form.Group>
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Confirm Password</Form.Label>
+                            <Form.Control onBlur={handleConfirmPasswordBlur} type="password" placeholder="Confirm Password" />
+                            <Form.Text className="text-danger">
+                                <p>{error}</p>
+                            </Form.Text>
+                            <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text>
+                        </Form.Group>
+                        <Button variant="primary" type="submit" className='w-100'>
+                            Sign Up
+                        </Button>
+                        <p>
+                            Already Have an Account? <Link to='/signin'>Log in</Link>
+                        </p>
+                        <div className="p-3 or">or</div>
+                        <Button variant="light" type="submit" className='w-100'>
+                            <img src="/image/google.png" alt="" width={'25px'} />
+                            Sign In With Google
+                        </Button>
+                    </Form>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default SignUp;
