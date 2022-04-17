@@ -1,18 +1,19 @@
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import About from './Component/About/About';
-import Blog from './Component/Blog/Blog';
+import './App.css'
 import Class from './Component/Class/Class';
-import Footer from './Component/Footer/Footer';
+import Blog from './Component/Blog/Blog';
+import About from './Component/About/About';
 import Header from './Component/Header/Header';
 import Home from './Component/Home/Home';
-import NotFound from './Component/NotFound/NotFound';
 import SignIn from './Component/SignIn/SignIn';
 import SignUp from './Component/SignUp/SignUp';
+import NotFound from './Component/NotFound/NotFound';
+import Footer from './Component/Footer/Footer';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div className='App'>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -23,10 +24,10 @@ function App() {
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
       </Routes>
-
       <Footer></Footer>
+
     </div>
   );
-}
+};
 
 export default App;

@@ -1,29 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../Firebase.inti';
 import './SignIn.css'
 
 const SignIn = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    const navigate = useNavigate();
+
+    const handleEmailBlur = (e) => {
+        setEmail(e.target.value);
+    }
+    const handlePasswordBlur = (e) => {
+        setPassword(e.target.value);
+    }
+
+    if (user) {
+        navigate('/')
+    }
+
+    const handleUserSignin = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(email, password);
+    }
+
+
     return (
         <div>
             <h1>Sign In</h1>
             <div className="row">
                 <div className="col-md-6"></div>
                 <div className="col-md-6 form p-5">
-                    <Form className='w-50 m-auto'>
+                    <Form onSubmit={handleUserSignin} className='w-50 m-auto'>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control onBlur={handleEmailBlur} type="email" placeholder="Enter email" />
 
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                            <Form.Control onBlur={handlePasswordBlur} type="password" placeholder="Password" />
                             <Form.Text className="text-muted">
                                 We'll never share your Password with anyone else.
                             </Form.Text>
+
                         </Form.Group>
+
                         <Button variant="primary" type="submit" className='w-100'>
                             Sign In
                         </Button>
