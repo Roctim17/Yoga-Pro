@@ -1,0 +1,8 @@
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px 150px;
+    background-color: black;
+    color: aliceblue;
+    align-items: center;
+}

@@ -17,6 +17,10 @@
     padding: 10px;
 }
 
+.logo h3 {
+    color: chocolate;
+}
+
 .menu ul {
     display: flex;
     justify-content: space-between;
@@ -27,8 +31,9 @@
     margin: 0 20px;
     text-transform: uppercase;
     font-weight: 600;
+    color: #000;
 }
 
 .menu ul a:hover {
-    color: blanchedalmond;
+    color: chocolate;
 }

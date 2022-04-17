@@ -1,0 +1,19 @@
+.single-services {
+    width: 350px;
+    height: auto;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: darkgray;
+    background-color: rgb(247, 242, 242);
+}
+
+.single-services img {
+    width: 320px;
+    height: 280px;
+    border-radius: 8px;
+}
+
+.single-services h3 h5 h6 {
+    margin: 0;
+}

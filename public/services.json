@@ -1,32 +1,37 @@
 [
     {
+        "id": 1,
         "name": "Yoga Class",
-        "price": "",
-        "img": "",
-        "time": ""
+        "price": "15.62",
+        "img": "/image/services/yoga.jpg",
+        "time": "6am-7am"
     },
     {
+        "id": 2,
         "name": "Meditation Class",
-        "price": "",
-        "img": "",
-        "time": ""
+        "price": "24.55",
+        "img": "/image/services/meditation.jpg",
+        "time": "5am-6am"
     },
     {
+        "id": 3,
         "name": "Fitness Class",
-        "price": "",
-        "img": "",
-        "time": ""
+        "price": "32.22",
+        "img": "/image/services/Fitness-f.jpg",
+        "time": "7am-8am"
     },
     {
+        "id": 4,
         "name": "Weight Loss & Toning Class",
-        "price": "",
-        "img": "",
-        "time": ""
+        "price": "44.55",
+        "img": "/image/services/weight.jpg",
+        "time": "5pm-6pm"
     },
     {
+        "id": 5,
         "name": "Mental Health Class",
-        "price": "",
-        "img": "",
-        "time": ""
+        "price": "18.99",
+        "img": "/image/services/mental-health.jpg",
+        "time": "3pm-4pm"
     }
 ]

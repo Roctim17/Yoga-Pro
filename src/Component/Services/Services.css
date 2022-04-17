@@ -1,0 +1,10 @@
+.services {
+    margin: auto;
+}
+
+.service-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 10px 150px;
+
+}
