@@ -1,0 +1,9 @@
+.or ::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #fb5200;
+    width: 3px;
+    height: 95px;
+    transform: translate(-350%, 15%);
+}

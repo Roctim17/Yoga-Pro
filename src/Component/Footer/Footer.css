@@ -6,3 +6,7 @@
     color: aliceblue;
     align-items: center;
 }
+
+.social i {
+    margin: 15px;
+}
