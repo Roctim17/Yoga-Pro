@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, sendPasswordResetEmail, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -9,11 +9,12 @@ import './SignIn.css'
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const [error, setError] = useState('');
     const [
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
     ] = useSignInWithEmailAndPassword(auth);
 
     const navigate = useNavigate();
@@ -36,6 +37,14 @@ const SignIn = () => {
     const handleUserSignin = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(email, password);
+        if (!password) {
+            setError(' Password did not match');
+            return;
+        }
+        if (!email) {
+            setError(' Email did not match');
+            return;
+        }
     }
 
     // User for Google sign in
@@ -51,6 +60,17 @@ const SignIn = () => {
             })
             .catch(error => {
                 console.log('error', error)
+            })
+    }
+
+    //
+    const handleForgetPassword = () => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                console.log('email send');
+            })
+            .catch(error => {
+                setError(error.message)
             })
     }
 
@@ -70,6 +90,7 @@ const SignIn = () => {
 
                         </Form.Group>
 
+
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
                             <Form.Control onBlur={handlePasswordBlur} type="password" placeholder="Password" />
@@ -77,8 +98,9 @@ const SignIn = () => {
                             <Form.Text className="text-muted">
                                 We'll never share your Password with anyone else.
                             </Form.Text>
-                            <p>
-                                Forgot Password? <Link to='/signup'>Reset Password</Link>
+                            <p className='text-danger'>{error}</p>
+                            <p >
+                                Forgot Password?  <Link onClick={handleForgetPassword} to='#'>Reset Password </Link>
                             </p>
 
 
