@@ -4,34 +4,39 @@
         "name": "Yoga Class",
         "price": "15.62",
         "img": "/image/services/yoga.jpg",
-        "time": "6am-7am"
+        "time": "6am-7am",
+        "description": "Yoga is an ancient and complex practice, rooted in Indian philosophy. It began as a spiritual practice but has become popular as a way of promoting physical and mental well-being."
     },
     {
         "id": 2,
         "name": "Meditation Class",
         "price": "24.55",
         "img": "/image/services/meditation.jpg",
-        "time": "5am-6am"
+        "time": "5am-6am",
+        "description": "Guided Meditations, Deep Relaxations and Other Practices. Try the Free Plum Village App! The Only 100% Free Mindfulness App in the App Store. Hundreds of Guided Meditations. Join Our Mailing List. See Our Catalog of Books. Be Mindful, be Peaceful."
     },
     {
         "id": 3,
         "name": "Fitness Class",
         "price": "32.22",
         "img": "/image/services/Fitness-f.jpg",
-        "time": "7am-8am"
+        "time": "7am-8am",
+        "description": "Physical fitness is a state of health and well-being and, more specifically, the ability to perform aspects of sports, occupations and daily activities."
     },
     {
         "id": 4,
         "name": "Weight Loss & Toning Class",
         "price": "44.55",
         "img": "/image/services/weight.jpg",
-        "time": "5pm-6pm"
+        "time": "5pm-6pm",
+        "description": "Healthy weight loss isn't always easy, but it's possible. Here's what doctors and nutritionists want you to know about losing weight using the keto diet, intermittent fasting, and other plans."
     },
     {
         "id": 5,
         "name": "Mental Health Class",
         "price": "18.99",
         "img": "/image/services/mental-health.jpg",
-        "time": "3pm-4pm"
+        "time": "3pm-4pm",
+        "description": "Mental health refers to cognitive, behavioral, and emotional well-being. It is all about how people think, feel, and behave. People sometimes use the term “mental health” to mean the absence of a mental disorder."
     }
 ]

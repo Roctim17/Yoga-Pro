@@ -1,0 +1,6 @@
+.join-class {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.500), rgba(0, 0, 0, 0.500)), url('./pexels-yan-krukov-8436597.jpg');
+    color: #fff;
+    background-position: center;
+    background-size: cover;
+}

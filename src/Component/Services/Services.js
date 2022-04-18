@@ -9,8 +9,8 @@ const Services = () => {
     const [services] = useServices();
     const topThree = services.slice(0, 3);
     return (
-        <div className='services'>
-            <h1>Services {services.length}</h1>
+        <div className='services pt-5'>
+            <h1>My Services</h1>
             <div className="service-details">
                 {
                     topThree.map(service => <SingleService

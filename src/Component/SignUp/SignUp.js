@@ -52,7 +52,7 @@ const SignUp = () => {
 
 
     return (
-        <div>
+        <div className='signin'>
             <h1>Sign Up</h1>
             <div className=" row">
                 <div className="col-md-6">
@@ -81,7 +81,7 @@ const SignUp = () => {
                             <Form.Text className="text-danger">
                                 <p>{error}</p>
                             </Form.Text>
-                            <Form.Text className="text-muted">
+                            <Form.Text className="text-light">
                                 We'll never share your email with anyone else.
                             </Form.Text>
                         </Form.Group>

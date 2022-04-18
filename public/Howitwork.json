@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Sign Up",
+        "img": "image/signup.png",
+        "description": "Tap into a network of thousands of tenants who prefer to rent with flat fair"
+    },
+    {
+        "id": 2,
+        "name": "Enter Program",
+        "img": "image/program.png",
+        "description": "Save your tenants thousands of pounds. Who prefer to rent with flat fair"
+    },
+    {
+        "id": 3,
+        "name": "Get Benefits",
+        "img": "image/Get Benefits.jpg",
+        "description": "Sing your tenants up to flat fair in minutes and get them moved in on the same day"
+    }
+]

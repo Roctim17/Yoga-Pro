@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase.inti';
 import './SignIn.css'
 
@@ -15,7 +15,14 @@ const SignIn = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location)
+    const from = location?.state?.from?.pathname || "/";
+    // const from = location?.state?.from?.pathname || "/";
+
+    console.log(from)
 
     const handleEmailBlur = (e) => {
         setEmail(e.target.value);
@@ -25,7 +32,7 @@ const SignIn = () => {
     }
 
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
 
     const handleUserSignin = (e) => {
@@ -35,11 +42,12 @@ const SignIn = () => {
 
 
     return (
-        <div>
+        <div className='signin'>
             <h1>Sign In</h1>
             <div className="row">
                 <div className="col-md-6"></div>
                 <div className="col-md-6 form p-5">
+
                     <Form onSubmit={handleUserSignin} className='w-50 m-auto'>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
@@ -68,8 +76,6 @@ const SignIn = () => {
                             Sign In With Google
                         </Button>
                     </Form>
-
-
                 </div>
             </div>
         </div>

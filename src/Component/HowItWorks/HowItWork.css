@@ -1,0 +1,9 @@
+.how-it-work {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.how-it-work img {
+    width: 100px;
+    height: 100px;
+}

@@ -11,6 +11,7 @@ import SignUp from './Component/SignUp/SignUp';
 import NotFound from './Component/NotFound/NotFound';
 import Footer from './Component/Footer/Footer';
 import RequireAuth from './Component/RequireAuth/RequireAuth';
+import JoinClass from './Component/JoinClass/JoinClass';
 
 const App = () => {
   return (
@@ -23,6 +24,13 @@ const App = () => {
         <Route path='/class' element={
           <RequireAuth>
             <Class></Class>
+          </RequireAuth>
+        }></Route>
+        <Route path='/joinclass' element={
+          <RequireAuth>
+            <JoinClass>
+
+            </JoinClass>
           </RequireAuth>
         }></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>

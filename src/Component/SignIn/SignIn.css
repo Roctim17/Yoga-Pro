@@ -1,0 +1,12 @@
+.signin {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.500), rgba(0, 0, 0, 0.500)), url('./pexels-photo-8436713.jpeg');
+    color: #fff;
+    background-position: center;
+    background-size: cover;
+}
+
+.signin a,
+h1 {
+    color: chocolate;
+    text-decoration: none;
+}
