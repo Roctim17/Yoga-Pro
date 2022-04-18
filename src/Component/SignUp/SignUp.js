@@ -71,10 +71,6 @@ const SignUp = () => {
                 console.log('error', error)
             })
     }
-
-
-
-
     return (
         <div className='signin'>
             <h1>Sign Up</h1>
