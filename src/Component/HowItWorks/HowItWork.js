@@ -11,7 +11,7 @@ const HowItWork = () => {
     }, [])
     return (
         <div>
-            <div className="row p-5">
+            <div className="row p-1">
                 <h1> How it Works</h1>
                 <h5>Find and book a great experience</h5>
 

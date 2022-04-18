@@ -13,24 +13,40 @@ const Header = () => {
 
     return (
         <div className='header'>
-            <div className="logo">
-                <img src="image/logo/yoga.png" alt="" />
-                <h3 className=''>Yoga Pro</h3>
-            </div>
-
-            <div className="menu ">
-                <ul>
-                    <Link to="/" >Home</Link>
-                    <Link to="/about" >About</Link>
-                    <Link to="/blog" >Blog</Link>
-                    <Link to="/class" >Class</Link>
-                    {
-                        user ?
-                            <button onClick={handleSignOut} className=' '>Sign out</button>
-                            :
-                            <Link to="/signin" >Sign in</Link>}
-                </ul>
-            </div>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container">
+                    <div className="logo">
+                        <img src="image/logo/yoga.png" alt="" />
+                        <h3 className=''>Yoga Pro</h3>
+                    </div>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse menu" id="navbarNav">
+                        <ul className="navbar-nav ms-auto">
+                            <li className="nav-item">
+                                <Link to="/" >Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/about" >About</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/blog" >Blog</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/class" >Premium Class</Link>
+                            </li>
+                            <li className="nav-item">
+                                {
+                                    user ?
+                                        <button onClick={handleSignOut} className='singout'>Sign out</button>
+                                        :
+                                        <Link to="/signin" >Sign in</Link>}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div >
     );
 };

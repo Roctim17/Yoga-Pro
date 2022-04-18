@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import './JoinClass.css'
+import './CheckOut.css'
 
-const JoinClass = () => {
+const CheckOut = () => {
     return (
-        <div className='join-class p-5'>
-            <h1>Join Class</h1>
+        <div className='checkout p-5'>
+            <h1>Checkout</h1>
             <div className="w-25 m-auto" >
                 <Form className=''>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -46,4 +46,4 @@ const JoinClass = () => {
     );
 };
 
-export default JoinClass;
+export default CheckOut;

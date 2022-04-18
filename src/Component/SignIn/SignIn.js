@@ -1,3 +1,4 @@
+import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -8,7 +9,6 @@ import './SignIn.css'
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const [
         signInWithEmailAndPassword,
         user,
@@ -18,11 +18,9 @@ const SignIn = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location)
     const from = location?.state?.from?.pathname || "/";
-    // const from = location?.state?.from?.pathname || "/";
 
-    console.log(from)
+
 
     const handleEmailBlur = (e) => {
         setEmail(e.target.value);
@@ -39,6 +37,23 @@ const SignIn = () => {
         e.preventDefault();
         signInWithEmailAndPassword(email, password);
     }
+
+    // User for Google sign in
+    const [userGoogle, setUserGoogle] = useState({});
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, provider)
+            .then(result => {
+                const user = result.user;
+                setUserGoogle(user);
+
+            })
+            .catch(error => {
+                console.log('error', error)
+            })
+    }
+
 
 
     return (
@@ -58,9 +73,14 @@ const SignIn = () => {
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
                             <Form.Control onBlur={handlePasswordBlur} type="password" placeholder="Password" />
+
                             <Form.Text className="text-muted">
                                 We'll never share your Password with anyone else.
                             </Form.Text>
+                            <p>
+                                Forgot Password? <Link to='/signup'>Reset Password</Link>
+                            </p>
+
 
                         </Form.Group>
 
@@ -71,7 +91,7 @@ const SignIn = () => {
                             New to Yoga-Pro? <Link to='/signup'>Create an account</Link>
                         </p>
                         <div className="p-3 or">or</div>
-                        <Button variant="light" type="submit" className='w-100'>
+                        <Button onClick={handleGoogleSignIn} variant="light" type="submit" className='w-100'>
                             <img src="/image/google.png" alt="" width={'25px'} />
                             Sign In With Google
                         </Button>

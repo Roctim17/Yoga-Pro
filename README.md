@@ -17,6 +17,8 @@ Work With----------
 
 
 FarmeWork &  library
+
 * react-bootstrap
+* Bootstrap-5
 * fontawesome
-* react router hooks
+* React Firebase Hooks - auth

@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.inti';
 
 
 
+
 const SignUp = () => {
+    const [registered, setRegistered] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
+
 
 
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
@@ -30,11 +34,14 @@ const SignUp = () => {
     const handleConfirmPasswordBlur = (e) => {
         setConfirmPassword(e.target.value);
     }
+    const handleRegisteredChange = e => {
 
+        console.log(e.target.checked);
+        setRegistered(e.target.checked);
+    }
     if (user) {
         navigate('/')
     }
-
 
     const handleCreateUser = (e) => {
         e.preventDefault();
@@ -48,6 +55,7 @@ const SignUp = () => {
         }
         createUserWithEmailAndPassword(email, password);
     }
+
 
 
 
@@ -85,7 +93,7 @@ const SignUp = () => {
                                 We'll never share your email with anyone else.
                             </Form.Text>
                         </Form.Group>
-                        <Button variant="primary" type="submit" className='w-100'>
+                        <Button onChange={handleRegisteredChange} variant="primary" type="submit" className='w-100'>
                             Sign Up
                         </Button>
                         <p>
@@ -94,7 +102,7 @@ const SignUp = () => {
                         <div className="p-3 or">or</div>
                         <Button variant="light" type="submit" className='w-100'>
                             <img src="/image/google.png" alt="" width={'25px'} />
-                            Sign In With Google
+                            Sign Up With Google
                         </Button>
                     </Form>
                 </div>

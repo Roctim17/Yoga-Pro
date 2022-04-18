@@ -13,7 +13,7 @@ const SingleService = ({ service }) => {
                 <p>{description.slice(0, 150)} ...</p>
                 <h5>Schedule : {time}</h5>
                 <h6>{price} $ /Month</h6>
-                <button className='btn bg-warning m-3 w-75' onClick={() => navigate('/joinclass')}> Check Out</button>
+                <button className='btn bg-warning m-3 w-75' onClick={() => navigate('/checkout')}> Check Out</button>
             </div>
         </div>
     );
