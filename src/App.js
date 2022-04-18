@@ -10,6 +10,7 @@ import SignIn from './Component/SignIn/SignIn';
 import SignUp from './Component/SignUp/SignUp';
 import NotFound from './Component/NotFound/NotFound';
 import Footer from './Component/Footer/Footer';
+import RequireAuth from './Component/RequireAuth/RequireAuth';
 
 const App = () => {
   return (
@@ -19,7 +20,11 @@ const App = () => {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
-        <Route path='/class' element={<Class></Class>}></Route>
+        <Route path='/class' element={
+          <RequireAuth>
+            <Class></Class>
+          </RequireAuth>
+        }></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/*' element={<NotFound></NotFound>}></Route>
