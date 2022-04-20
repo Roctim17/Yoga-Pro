@@ -75,10 +75,10 @@ const SignUp = () => {
         <div className='signin'>
             <h1>Sign Up</h1>
             <div className=" row">
-                <div className="col-md-6">
+                <div className="col-md-7 col-sm-12">
                 </div>
-                <div className="col-md-6 form p-5">
-                    <Form onSubmit={handleCreateUser} className='w-50 m-auto'>
+                <div className="col-md-4 col-sm-12 form p-5">
+                    <Form onSubmit={handleCreateUser} className='w-100 m-auto'>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Your Name</Form.Label>
                             <Form.Control onBlur={handleNameBlur} type="name" placeholder="Enter Your Name" />

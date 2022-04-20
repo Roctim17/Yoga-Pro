@@ -4,7 +4,7 @@ import './Blog.css'
 const Blog = () => {
     return (
         <div className='blog p-3'>
-            <div className="">
+            {/* <div className="">
                 <h5> Difference between authorization and authentication</h5>
                 <p>
                     Authentication is the act of validating users are whom they claim to be. This Is the first step in any security process.
@@ -45,7 +45,7 @@ const Blog = () => {
                     Those all are most useful service for web & mobile Application Development.
                 </p>
 
-            </div>
+            </div>*/}
         </div>
     );
 };

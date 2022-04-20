@@ -3,3 +3,10 @@
     grid-template-columns: repeat(3, 1fr);
     margin: 10px 150px;
 }
+
+@media only screen and (max-width:688px) {
+    .class {
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+    }
+}

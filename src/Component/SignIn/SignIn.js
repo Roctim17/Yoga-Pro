@@ -1,3 +1,5 @@
+import { Toast } from 'bootstrap';
+
 import { GoogleAuthProvider, sendPasswordResetEmail, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
@@ -63,11 +65,15 @@ const SignIn = () => {
             })
     }
 
+
+
+
+
     //
     const handleForgetPassword = () => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
-                console.log('email send');
+                alert('email send');
             })
             .catch(error => {
                 setError(error.message)
@@ -80,10 +86,12 @@ const SignIn = () => {
         <div className='signin'>
             <h1>Sign In</h1>
             <div className="row">
-                <div className="col-md-6"></div>
-                <div className="col-md-6 form p-5">
+                <div className="col-md-7 col-sm-12">
+                </div>
+                <div className="col-md-4 col-sm-12 form p-5">
 
-                    <Form onSubmit={handleUserSignin} className='w-50 m-auto'>
+
+                    <Form onSubmit={handleUserSignin} className='w-100 m-auto'>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control onBlur={handleEmailBlur} type="email" placeholder="Enter email" />
